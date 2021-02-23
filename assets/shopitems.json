@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Bank Space",
+        "id": "1",
+        "description": "Lets you buy 200 more capacity to increase your bank size.",
+        "cost": "200"
+    },
+    {
+        "name": "Booby Trap",
+        "id": "2",
+        "description": "Protects your money from the next robber.",
+        "cost": "500"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    },
+    {
+        "name": "Test Item",
+        "id": "3",
+        "description": "Test Item",
+        "cost": "10"
+    }
+]
