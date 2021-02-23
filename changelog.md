@@ -1,3 +1,9 @@
+## **Version 1.3.1**
+**Added**: N/A
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: The old json database compatibility
 ## **Version 1.3.0**
 **Added**: A full cooldown system!
 **Changed**: The `shop` command now works better
