@@ -1,3 +1,15 @@
+## **Version 1.4.1**
+**Added**: `pretend` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.4.0**
+**Added**: `achievement`, `amiajoke`, `cat`, `deepfry` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
 ## **Version 1.3.1**
 **Added**: N/A
 **Changed**: N/A

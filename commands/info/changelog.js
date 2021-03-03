@@ -1,9 +1,7 @@
-const Discord = require('discord.js');
-const superagent = require('superagent');
-const fs = require('fs')
-
-
-const changelogArray = [
+const Discord = require('discord.js'),
+  superagent = require('superagent'),
+  fs = require('fs'),
+  changelogArray = [
     "1.0.1",
     "1.0.0",
     "0.0.0"
@@ -15,14 +13,14 @@ exports.run = async (client, message, args, tools) => {
     if (args[0]) {
         let index = changelogArray.indexOf(args[0].toString()) + 1
         const data = fs.readFileSync('changelog.md', 'utf8')
-        let data1 = data.toString()
-        let data2 = data1.split("##").slice(index - 1, 1)
+        let data1 = data.toString(),
+          data2 = data1.split("##").slice(index - 1, 1)
         text += data2
     }
     else {
         const data = fs.readFileSync('changelog.md', 'utf8')
-        let data1 = data.toString()
-        let data2 = data1.split("##").slice(1, 2)
+        let data1 = data.toString(),
+          data2 = data1.split("##").slice(1, 2)
         text += data2
 
     }

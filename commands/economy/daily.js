@@ -1,9 +1,9 @@
-const Discord = require('discord.js');
-const superagent = require('superagent');
-const mongoose = require('mongoose');
-const coins = require('../../models/coins.js')
-const ms = require('ms')
-const humanizeDuration = require("humanize-duration");
+const Discord = require('discord.js'),
+  superagent = require('superagent'),
+  mongoose = require('mongoose'),
+  coins = require('../../models/coins.js'),
+  ms = require('ms'),
+  humanizeDuration = require("humanize-duration");
 
 
 exports.run = async (client, message, args, tools) => {

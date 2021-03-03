@@ -1,31 +1,27 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const keepAlive = require('./server.js');
-const settings = require('./settings.json');
-const mongoose = require('mongoose');
-const chalk = require('chalk');
+const Discord = require("discord.js"),
+  client = new Discord.Client(),
+  keepAlive = require('./server.js'),
+  settings = require('./settings.json'),
+  mongoose = require('mongoose'),
+  chalk = require('chalk'),
+  modules = [
+    "apis",
+    "economy",
+    "images",
+    "info",
+    "misc",
+    "moderation",
+    "music",
+    "owner",
+    "roleplay",
+    "utility"
+  ],
+  fs = require("fs");
 
+require('./util/eventLoader.js')(client);
 
-require('./util/eventLoader')(client);
-
-
-client.commands = new Discord.Collection(); 
+client.commands = new Discord.Collection(), 
 client.aliases = new Discord.Collection();
-
-const modules = [
-  "apis",
-  "economy",
-  "images",
-  "info",
-  "misc",
-  "moderation",
-  "music",
-  "owner",
-  "roleplay",
-  "utility"
-]; 
-
-const fs = require("fs");
 
 modules.forEach(c => {
   fs.readdir(`./commands/${c}/`, (err, files) => {
@@ -41,9 +37,9 @@ modules.forEach(c => {
   });
 });
 
-mongoose.connect(`mongodb+srv://compass:${process.env.mongodbpass}@commandstorm.7zq2c.mongodb.net/DiscordDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true   }, err => {
-    if (err) return console.error(err);
-    console.log(chalk.bgGreen.black('Connected to MongoDB database!'));
+mongoose.connect(`mongodb+srv://compass:${process.env.mongodbpass}@commandstorm.7zq2c.mongodb.net/DiscordDB?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true }, err => {
+  if (err) return console.error(err);
+  console.log(chalk.bgGreen.black('Connected to MongoDB database!'));
 });
 
 client.elevation = message => {
@@ -57,5 +53,5 @@ client.elevation = message => {
   return permlvl;
 };
 
-keepAlive();
+//keepAlive();
 client.login(process.env.token);

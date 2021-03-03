@@ -1,8 +1,7 @@
-const Discord = require("discord.js");
-const superagent = require("superagent");
-const fs = require("fs");
-
-const modules = [
+const Discord = require("discord.js"),
+  superagent = require("superagent"),
+  fs = require("fs"),
+  modules = [
   "apis",
   "economy",
   "images",
@@ -16,23 +15,17 @@ const modules = [
 ];
 
 function permlevel(input) {
-  if (input == 5) {
+  if (input == 5)
     return "Can only be used by owner of bot";
-  }
-  if (input == 4) {
+  else if (input == 4)
     return "Can only be used by guild owner";
-  }
-  if (input == 3) {
+  else if (input == 3)
     return "Manage Guild";
-  }
-  if (input == 2) {
+  else if (input == 2)
     return "Ban Members";
-  }
-  if (input == 1) {
+  else if (input == 1)
     return "Manage Messages";
-  } else {
-    return "Anyone can use this command!";
-  }
+  else return "Anyone can use this command!";
 }
 exports.run = async (client, message, args, tools) => {
   if (!args[0]) {
@@ -59,14 +52,13 @@ exports.run = async (client, message, args, tools) => {
           return;
         }
 
-        let result = jsfiles.forEach((f, i) => {
+        jsfiles.forEach(f => {
           let props = require(`../../commands/${args[0]}/${f}`);
           filesArray.push(`${props.help.name}`);
         });
 
-        let commandslist = filesArray.join("\n");
-
-        let listEmbed = new Discord.MessageEmbed()
+        let commandslist = filesArray.join("\n"),
+          listEmbed = new Discord.MessageEmbed()
           .setTitle(`Commands in directory \"${args[0]}\"`)
           .setColor("#d000a8")
 

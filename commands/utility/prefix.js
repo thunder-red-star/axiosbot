@@ -1,12 +1,12 @@
-const Discord = require('discord.js');
-const superagent = require('superagent');
-const mongoose = require('mongoose');
-const settings = require('../../models/settings.js')
+const Discord = require('discord.js'),
+  superagent = require('superagent'),
+  mongoose = require('mongoose'),
+  settings = require('../../models/settings.js')
 
 exports.run = async (client, message, args, tools) => {
     if (!args[0]) {
-        const Settings = require('../../models/settings.js')
-        const data = await Settings.findOne({
+        const Settings = require('../../models/settings.js'),
+          data = await Settings.findOne({
             guildID: message.guild.id
         });
         if (!data) {
@@ -21,8 +21,8 @@ exports.run = async (client, message, args, tools) => {
         else {
         return message.reply(`The current prefix for ${message.guild.name} is ${data.prefix}`)}
     } else {
-        const Settings = require('../../models/settings.js')
-        const data = await Settings.findOne({
+        const Settings = require('../../models/settings.js'),
+          data = await Settings.findOne({
             guildID: message.guild.id
         });
         if (!data) {
@@ -39,8 +39,8 @@ exports.run = async (client, message, args, tools) => {
                 .setDescription(`Success! The prefix for ${message.guild.name} is now \`${args[0]}\``)
                 message.channel.send(successEmbed)
         } else {
-            var myquery = { guildID: message.guild.id };
-            var newvalues = { $set: { prefix: args[0] } };
+            var myquery = { guildID: message.guild.id },
+              newvalues = { $set: { prefix: args[0] } };
             Settings.updateOne(myquery, newvalues, function(err, res) {
                 if (err) throw err;
                 let successEmbed = new Discord.MessageEmbed()

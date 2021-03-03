@@ -1,9 +1,9 @@
-const Discord = require('discord.js');
-const superagent = require('superagent');
-const mongoose = require('mongoose');
-const Coins = require('../../models/coins.js');
-const copypastas = require('../../assets/shopitems.json');
-const Pagination = require('discord-paginationembed');
+const Discord = require('discord.js'),
+  superagent = require('superagent'),
+  mongoose = require('mongoose'),
+  Coins = require('../../models/coins.js'),
+  copypastas = require('../../assets/shopitems.json'),
+  Pagination = require('discord-paginationembed');
 
 
 exports.run = async (client, message, args, tools) => {

@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
-const superagent = require('superagent');
-const mongoose = require('mongoose');
-const Coins = require('../../models/coins.js');
+const Discord = require('discord.js'),
+  superagent = require('superagent'),
+  mongoose = require('mongoose'),
+  Coins = require('../../models/coins.js');
 
 exports.run = async (client, message, args, tools) => {
     message.channel.send('Coming soon!')

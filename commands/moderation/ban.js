@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
-  let reason = args.slice(1).join(" ");
-  let user = message.mentions.users.first();
+  let reason = args.slice(1).join(" "),
+    user = message.mentions.users.first();
   if (message.mentions.users.size < 1)
     return message.channel
       .send("You must mention someone to ban them.")
@@ -49,22 +49,22 @@ exports.run = (client, message, args) => {
     if (user.bot) return;
     message.mentions.users
       .first()
-      .send({ embed })
+      .send(embed)
       .catch(e => {
         if (e) return;
       });
     message.guild.members.ban(user.id, { days: 7, reason: reason });
     let logchannel = message.guild.channels.cache.find(x => (x.name = "logs"));
     if (!logchannel) {
-      message.channel.send({ embed });
+      message.channel.send(embed);
     } else {
       client.channels.cache.get(logchannel.id).send({ embed });
-      message.channel.send({ embed });
+      message.channel.send(embed);
     }
     if (user.bot) return;
     message.mentions.users
       .first()
-      .send({ embed })
+      .send(embed)
       .catch(e => {
         if (e) return;
       });

@@ -2,6 +2,7 @@ const utility = require('../../utils.js');
 const {Util } = require('discord.js');
 const Discord = require('discord.js')
 
+// if you don't use things get rid of them, they take up space (sorry if I sounded rude)
 function clean(text) {
     if (typeof(text) === "string")
         return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
@@ -17,9 +18,9 @@ exports.run = (client, message, args) => {
     }
     args = args.join(" ");
     try {
-        let evaled = eval(args);
+      let evaled = eval(args);
       let typeofoutput = typeof evaled
-      if (typeof evaled !== "string"){
+      if (typeofoutput !== "string"){
         evaled = require("util").inspect(evaled);}
 
       const codeblok = new Discord.MessageEmbed()
@@ -28,7 +29,8 @@ exports.run = (client, message, args) => {
       .setDescription(`
         \`\`\`js\n${evaled}\`\`\``)
         .addField("Type", `\`\`\`js\n${typeofoutput}\`\`\``)
-      message.channel.send(codeblok);}
+      message.channel.send(codeblok);
+    }
 catch (e) {
     message.react('811296689783832617')
   let error = e;
