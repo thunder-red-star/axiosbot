@@ -9,11 +9,11 @@ exports.run = (client, message, args) => {
       .catch(console.error);
   if (message.mentions.users.first().id === message.author.id)
     return message.channel.send(
-      "I can't let you do that, self-harm is bad:facepalm:"
+      "I can't let you do that, self-harm is bad :facepalm:"
     );
   if (user.id === client.user.id)
     return message.channel.send(
-      "You pleblord, how can you use a bot to ban itself?:joy:"
+      "You pleblord, how can you use a bot to ban itself? :joy:"
     );
   if (reason.length < 1) reason = "No reason supplied.";
   let botRolePossition = message.guild.member(client.user).roles.highest

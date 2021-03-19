@@ -4,8 +4,7 @@ const Discord = require('discord.js'),
   AlexClient = new AlexAPI(process.env.apitoken);
 
 exports.run = async (client, message, args) => {
-  let avatar = message.content.split(" ").slice(1, 2),
-    text = message.content.split(" ").slice(2).join(" "),
+    text = message.content.split(" ").slice(1).join(" "),
     link = await AlexClient.image.achievement({text: text})
 await message.channel.send({files: [{ attachment: link }]});
 };

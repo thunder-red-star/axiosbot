@@ -4,7 +4,7 @@ const Discord = require('discord.js'),
   AlexClient = new AlexAPI(process.env.apitoken);
 
 exports.run = async (client, message, args) => {
-  let avatar = message.mentions.users.size ? message.mentions.users.first().avatarURL({ format: 'png', dynamic: true, size: 2048 }) : message.author.avatarURL({ format: 'png', dynamic: true, size: 2048 }),
+
     link = await AlexClient.image.cats();
 message.channel.send({files: [{ attachment: link.file }]});
 };

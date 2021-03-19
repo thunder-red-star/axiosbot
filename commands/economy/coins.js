@@ -1,7 +1,7 @@
 const Discord = require('discord.js'),
-  superagent = require('superagent'),
-  mongoose = require('mongoose'),
-  Coins = require('../../models/coins.js');
+    superagent = require('superagent'),
+    mongoose = require('mongoose'),
+    Coins = require('../../models/coins.js');
 
 exports.run = async (client, message, args, tools) => {
     if (!args[0]) {
@@ -9,22 +9,31 @@ exports.run = async (client, message, args, tools) => {
             userID: message.author.id
         });
         let coinsEmbed = new Discord.MessageEmbed()
-        .setTitle("Coins")
-        .setColor("#d000a8")
-        .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
+            .setTitle("Coins")
+            .setColor("#d000a8")
+            .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
         message.channel.send(coinsEmbed)
     }
     else {
+        let user = message.mentions.users.first();
+        if (user === undefined) {
+            let userid = message.content.split(" ").slice(1, 2).join("")
+            user = await client.users.cache.get(userid)
+            if (user === undefined) {
+                message.channel.send("Please provide an actual mention or id!")
+            }
+        }
         const data = await Coins.findOne({
-            userID: message.mentions.users.first().id
+            userID: user.id
         });
-        if (!data) {return message.channel.send('That user doesn\'t have any coins on record!')}
+        if (!data) { return message.channel.send('That user doesn\'t have any coins on record!') }
         else {
-        let coinsEmbed = new Discord.MessageEmbed()
-        .setTitle("Coins")
-        .setColor("#d000a8")
-        .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
-        message.channel.send(coinsEmbed)}
+            let coinsEmbed = new Discord.MessageEmbed()
+                .setTitle("Coins")
+                .setColor("#d000a8")
+                .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
+            message.channel.send(coinsEmbed)
+        }
     }
 };
 

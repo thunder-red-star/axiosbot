@@ -1,3 +1,33 @@
+## **Version 1.6.3**
+**Added**: N/A
+**Changed**: Updated `help`
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.6.2**
+**Added**: Approved by [top.gg](https://top.gg)!
+**Changed**: Updated `vote` to give rewards
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.6.1**
+**Added**: N/A
+**Changed**: Optimized `shell`
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.6.0**
+**Added**: `kick`, `purge`, `lockdown`, `unlockdown`, `timedlockdown`, `shell` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.5.0**
+**Added**: `nyt` command added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
 ## **Version 1.4.1**
 **Added**: `pretend` commands added
 **Changed**: N/A

@@ -34,7 +34,7 @@ exports.run = async (client, message, args, tools) => {
       .setColor("#d000a8")
 
       .setDescription(
-        "apis\neconomy\nimages\ninfo\nmoderation\nmusic\nowner\nroleplay\nutility"
+        "apis\neconomy\nimages\ninfo\nmoderation\nmusic\nowner\nroleplay\nutility\n\nUse `c!help <category>` to see the commands for that category!"
       )
       .setFooter("CommandStorm")
       .setTimestamp();
@@ -62,7 +62,7 @@ exports.run = async (client, message, args, tools) => {
           .setTitle(`Commands in directory \"${args[0]}\"`)
           .setColor("#d000a8")
 
-          .setDescription(commandslist)
+          .setDescription(commandslist + "\n\nUse `c!help <command>` to see help for an individual command!")
           .setFooter("CommandStorm")
           .setTimestamp();
 
@@ -80,7 +80,7 @@ exports.run = async (client, message, args, tools) => {
               cmd.help.description
             }\nUsage: \`${cmd.help.usage}\`\nPermission Level: ${cmd.conf.permLevel} (${permlevel(
               cmd.conf.permLevel
-            )})`
+            )})\n\nPro tip: You can vote for the bot using \`c!vote\` and you can get coins for it!`
           )
           .setFooter("CommandStorm")
           .setTimestamp();
@@ -97,7 +97,7 @@ exports.run = async (client, message, args, tools) => {
               cmd.help.description
             }\nUsage: \`${cmd.help.usage}\`\nPermission Level: ${cmd.conf.permLevel} (${permlevel(
               cmd.conf.permLevel
-            )})`
+            )})\n\nPro tip: You can vote for the bot using \`c!vote\` and you can get coins for it!`
           )
           .setFooter("CommandStorm")
           .setTimestamp();

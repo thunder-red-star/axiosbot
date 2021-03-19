@@ -1,0 +1,15 @@
+c!eval let Discord = require('discord.js')
+let rule = new Discord.MessageEmbed()
+    .setTitle('⯌ Rule 1  -  Only post information that is considerate and kind! ⯌')
+    .addFields(
+        {
+            name: '\u200B', value: '● This is a PG-13 server, meaning that you shouldn\'t post NSFW, explicit, suggestive, or obscene content in ANY CHANNELS except for marked channels like #:underage:nsfw.', inline: false
+        },
+        { name: '\u200B', value: '● We do not tolerate hate speech, defamation, bullying, discrimination, etc. of any kind in this server. Be considerate of others and be a decent person.', inline: true },
+        { name: '\u200B', value: '● Be a gud potato! If there are implied rules in a certain channel (e.g. #:abacus:counting , you should type in the next number), follow them! Nobody likes a party pooper.', inline: false },
+        { name: '\u200B', value: '● Please do not mass mention or spam in channels. It\'s quite annoying, doesn\'t help the server, and gives you a permanent bad impression in the server.', inline: true },
+        { name: '\u200B', value: '● Please do not mention staff for no reason!', inline: false }
+    )
+    .setColor("#d000a8");
+
+message.channel.send(rule);

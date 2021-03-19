@@ -43,7 +43,7 @@ exports.run = async (client, message, tools) => {
         .addField("Total Commands", `${totalcmds} commands`, true)
         .addField("Total Servers", `${totalservers}`, true)
         .addField("Total Channels", `${totalchannels}`, true)
-        .addField("Total Users", `${totalusers}`, true)
+        .addField("Total Users", `${totalusers}, ${client.users.cache.size} cached users`, true)
         .addField("Bot Version", version["version"], true)
         .addField("Library", "Discord.js v12", true)
         .addField("Developer", `ThunderRedStar`, true)

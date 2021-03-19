@@ -3,20 +3,26 @@ const superagent = require('superagent');
 const request = require('request');
 
 exports.run = async (client, message, args, tools) => {
-  let mentioned = message.mentions.users.first();
-    let mentionedGuildMember = message.mentions.members.first();
+        let user = message.mentions.users.first();
+        if (user == undefined) {
+            let userid = message.content.split(" ").slice(1, 2).join("")
+            user = await client.users.fetch(userid)
+            if (user == undefined) {
+                message.channel.send("Please provide an actual mention or id!")
+            }
+        }
     let firstArg = args.shift();
     let sayContent = args.join(" ");
-    if(mentioned == undefined){
+    if(user == undefined){
       return message.channel.send('You must mention a user to pretend to be them! Or are you gonna pretend to be thin air?');
     };
-    if(mentioned.id == 1){return}
-    message.channel.createWebhook(`sayas`, {
-      avatar: `https://cdn.discordapp.com/avatars/${mentioned.id}/${mentioned.avatar}.png?size=128`,
+    if(user.id == 1){return}
+    message.channel.createWebhook(`${user.username}`, {
+      avatar: `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=128`,
       reason: `pretend command`
     }).then((webhook) =>{
       webhook.send(sayContent, {
-        username: mentionedGuildMember.displayName
+        username: user.username
       }).then(() =>{webhook.delete()});
       message.delete();
     });

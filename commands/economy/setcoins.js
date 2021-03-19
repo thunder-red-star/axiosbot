@@ -1,11 +1,16 @@
 const Discord = require('discord.js'),
-  superagent = require('superagent'),
-  mongoose = require('mongoose'),
-  Coins = require('../../models/coins.js');
+    superagent = require('superagent'),
+    mongoose = require('mongoose'),
+    Coins = require('../../models/coins.js');
 
 exports.run = async (client, message, args, tools) => {
-    if (!args[0]) {
-        return message.channel.send('You have to mention someone to set their coins!')
+    let user = message.mentions.users.first();
+    if (user === undefined) {
+        let userid = message.content.split(" ").slice(1, 2).join("")
+        user = await client.users.cache.get(userid)
+        if (user === undefined) {
+            message.channel.send("Please provide an actual mention or id!")
+        }
     }
     if (!args[1]) {
         return message.channel.send('You have to give them an actual number of coins!')
