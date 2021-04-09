@@ -32,8 +32,8 @@ exports.run = async (client, message, tools) => {
       guildID: message.guild.id
     }, (err, srid) => {
       let globalprefix = settings.prefix;
-      osutils.cpuUsage(function(v) {
-        const embed = new Discord.MessageEmbed()
+      osutils.cpuUsage(async function(v) {
+        const embed = await new Discord.MessageEmbed()
         .setColor("#d000a8")
         .setTitle('Stats for CommandStorm')
         .setThumbnail(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
@@ -49,14 +49,13 @@ exports.run = async (client, message, tools) => {
         .addField("Developer", `ThunderRedStar`, true)
         .addField("Platform", osutils.platform(),true)
         .addField("VPS CPU Cores", osutils.cpuCount() + " Cores",true)
-        .addField("CPU Usage", `${(v * 100).toString().split(".")[0] + "." + (v * 100).toString().split(".")[1].split('')[0] + (v * 100).toString().split(".")[1].split('')[1]}%`,true)
         .addField("Total Memory", osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1] + "MB",true)
         .addField("RAM Usage Of VPS", `${(osutils.totalmem() - osutils.freemem()).toString().split(".")[0] + "." + ( osutils.totalmem() - osutils.freemem()).toString().split(".")[1].split('')[0] + (osutils.totalmem() - osutils.freemem()).toString().split(".")[1].split('')[1]}/${osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1]}MB`,true)
         .addField("RAM Usage Of Bot", (process.memoryUsage().heapUsed / 1024 / 1024 ).toFixed(2) + "MB/" + osutils.totalmem().toString().split(".")[0] + "." + osutils.totalmem().toString().split(".")[1].split('')[0] + osutils.totalmem().toString().split(".")[1].split('')[1] + "MB",true)
         .addField("RAM Usage Of VPS %", `${(100 - osutils.freememPercentage() * 100).toString().split(".")[0] + "." + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[0] + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[1]}%`,true)
         .addField("Ping", Math.round(client.ws.ping) + "ms", true)
         .addField("Uptime", days + "d " + hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s", true)
-        .setFooter(`Sprinkles`);
+        .setFooter(`CommandStorm`);
         message.channel.send({embed});
       })
     })

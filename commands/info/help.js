@@ -34,7 +34,7 @@ exports.run = async (client, message, args, tools) => {
       .setColor("#d000a8")
 
       .setDescription(
-        "apis\neconomy\nimages\ninfo\nmoderation\nmusic\nowner\nroleplay\nutility\n\nUse `c!help <category>` to see the commands for that category!"
+        "\`apis\`\n\`economy\`\n\`images\`\n\`info\`\n\`moderation\`\n\`music\`\n\`owner\`\n\`roleplay\`\n\`utility\`\n\nUse `c!help <category>` to see the commands for that category!"
       )
       .setFooter("CommandStorm")
       .setTimestamp();
@@ -54,7 +54,7 @@ exports.run = async (client, message, args, tools) => {
 
         jsfiles.forEach(f => {
           let props = require(`../../commands/${args[0]}/${f}`);
-          filesArray.push(`${props.help.name}`);
+          filesArray.push(`\`${props.help.name}\``);
         });
 
         let commandslist = filesArray.join("\n"),

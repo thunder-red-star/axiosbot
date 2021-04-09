@@ -5,7 +5,7 @@ exports.run = async (client, message, args, tools) => {
     let inviteEmbed = new Discord.MessageEmbed()
     .setColor("#d000a8")
     .setTitle('CommandStorm')
-    .setDescription(`[Dashboard](https://dashboard.williamvongphan.repl.co)`)
+    .setDescription(`[Dashboard](https://dashboard.williamvongphan.repl.co)\n\nhaha this is a wip`)
     .setTimestamp()
     message.channel.send(inviteEmbed)
 };
@@ -19,8 +19,8 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'invite',
-    description: 'Returns an invite link for the bot.',
-    usage: 'invite',
+    name: 'dashboard',
+    description: 'Returns a link to the dashboard',
+    usage: 'dashboard',
     example: 'invite (returns a link to invite bot)'
   };

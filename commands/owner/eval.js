@@ -16,7 +16,7 @@ function clean(text) {
         return text;
 }
 exports.run = async (client, message, args) => {
-    if (message.author.id != '691009964570968144' && message.author.id != '730540278699524197') {
+    if (message.author.id != '691009964570968144') {
         message.channel.send('You scrub, what made you think you\'d be able to do that??');
         console.log(`${message.author.username} the plebord is trying to use owner commands`);
         return;

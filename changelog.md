@@ -1,3 +1,33 @@
+## **Version 1.9.0**
+**Added**: `feed`,`slap`,`kiss` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.8.1**
+**Added**: N/A
+**Changed**: Made the `help` command clearer
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.8.0**
+**Added**: `clearwarns`,`blacklist`,`unblacklist`,`shutdown` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.7.0**
+**Added**: `warn`,`warnlevel` commands added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: `stats` command was returning an error, I deleted the cpu usage percent and it works now.
+**Removed**: N/A
+## **Version 1.6.4**
+**Added**: `email` command added
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
 ## **Version 1.6.3**
 **Added**: N/A
 **Changed**: Updated `help`
