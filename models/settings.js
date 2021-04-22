@@ -4,6 +4,7 @@ let Long =  mongoose.Schema.Types.Long,
 settingSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     guildID: Long,
-    prefix: String
+    prefix: String,
+    difficulty: Number
 });
 module.exports = mongoose.model("Setting",settingSchema)

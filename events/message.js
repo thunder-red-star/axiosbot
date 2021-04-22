@@ -15,6 +15,12 @@ module.exports = async message => {
     let guildSettings = await Settings.findOne({
         guildID: message.guild.id
     })
+  let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
+  if (!blacklist[message.author.id]) {
+        blacklist[message.author.id] = {state: false}
+      };
+
+      if (blacklist[message.author.id].state === true) return;
 
     if (message.author.bot || message.webhookID) return;
 

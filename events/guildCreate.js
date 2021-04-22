@@ -17,4 +17,13 @@ module.exports = guild => {
       prefix: "c!",
     })
     newData.save();
+    let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
+    channel = guild.channels.cache.get(guild.systemChannelID || channelID)
+    client.guilds.forEach((guild) => {
+      if (!blacklist[guild.ownerID]) return
+      if(blacklist[guild.ownerID].state === true) {
+        channel.send("But UNFORTUNATELY, the owner of this server has been blacklisted before so I'm LEAVING! Bye!")
+        guild.leave(guild.id)
+      }
+    })
 }

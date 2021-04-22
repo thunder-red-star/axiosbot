@@ -6,6 +6,7 @@ coinsSchema = mongoose.Schema({
     userID: Long,
     coins: Number,
     lastclaim: Long, 
+    streak: Number,
     bank: Number, 
     capacity: Number
 });
