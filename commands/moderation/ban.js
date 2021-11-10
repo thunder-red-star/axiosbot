@@ -35,7 +35,7 @@ exports.run = (client, message, args) => {
     return;
   } else {
     const embed = new Discord.MessageEmbed()
-      .setColor("#d000a8")
+      .setColor("#0174c3")
       .setTimestamp()
       .addField("Action", "Ban")
       .addField("User:", `${user.username}#${user.discriminator} (${user.id})`)
@@ -44,7 +44,7 @@ exports.run = (client, message, args) => {
         `${message.author.username}#${message.author.discriminator}`
       )
       .addField("Reason", reason)
-      .setFooter(`CommandStorm`);
+      .setFooter(`Axios`);
     //let obj = JSON.parse(`{"days":7, "reason": ${reason}}`)
     if (user.bot) return;
     message.mentions.users

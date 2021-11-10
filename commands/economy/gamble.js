@@ -26,6 +26,7 @@ exports.run = (client, message, args) => {
             if (money > 2500) return message.reply("Due to disgusting abusers of the casino, you can only bet max 2500 coins ;-;")
             if (parseInt(coins.coins) < money) return message.channel.send(`**${message.author.username}** Scrub you don't even have that much ***smug face***`);
 
+            if (args[0] < 0) return message.channel.send(`**${message.author.username}** You can't scam the casino, we can scam you LMAO`);
             let random = Math.floor(Math.random() * 100);
 
             if (random == 0) { //1%

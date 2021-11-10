@@ -3,8 +3,8 @@ const superagent = require('superagent');
 
 exports.run = async (client, message, args, tools) => {
     let inviteEmbed = new Discord.MessageEmbed()
-    .setColor("#d000a8")
-    .setTitle('CommandStorm')
+    .setColor("#0174c3")
+    .setTitle('Axios')
     .setDescription(`[Invite](https://discord.com/oauth2/authorize?client_id=809175820340822056&scope=bot+applications.commands&guild_id=undefined&permissions=8)`)
     .setTimestamp()
     message.channel.send(inviteEmbed)

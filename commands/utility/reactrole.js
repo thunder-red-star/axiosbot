@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
     let reactroleEmbed = new Discord.MessageEmbed()
     .setTitle(`React with ${emojilisten} to get the \`${role}\` role!`)
     .setDescription(embedmessage)
-    .setColor("#d000a8")
+    .setColor("#0174c3")
     .setTimestamp()
     await message.channel.send(reactroleEmbed).then(async msg => {
         message.react(emojilisten.id)

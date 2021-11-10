@@ -7,8 +7,8 @@ exports.run = async (client, message, args, tools) => {
     content = args.join(" ");
     message.reply("Thanks for suggesting something!");
     let suggestEmbed = new Discord.MessageEmbed()
-    .setColor("#d000a8")
-    .setTitle('CommandStorm')
+    .setColor("#0174c3")
+    .setTitle('Axios')
     .setDescription(`${message.author.tag} (${message.author.id}) suggested:\n\`\`\`${content}\`\`\` \nin server ${message.guild.name}`)
     .setTimestamp()
     client.channels.cache.get('809487674112475181').send(suggestEmbed)

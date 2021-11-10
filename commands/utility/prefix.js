@@ -10,11 +10,11 @@ exports.run = async (client, message, args, tools) => {
             guildID: message.guild.id
         });
         if (!data) {
-            message.channel.send('This guild has no settings, but the prefix is c!')
+            message.channel.send('This guild has no settings, but the prefix is a!')
             let newData = new Settings({
                 _id: mongoose.Types.ObjectId(),
                 guildID: message.guild.id,
-                prefix: "c!",
+                prefix: "a!",
             })
             newData.save();
         }
@@ -35,7 +35,7 @@ exports.run = async (client, message, args, tools) => {
             newData.save();
             let successEmbed = new Discord.MessageEmbed()
                 .setTitle('Prefix')
-                .setColor("#d000a8")
+                .setColor("#0174c3")
                 .setDescription(`Success! The prefix for ${message.guild.name} is now \`${args[0]}\``)
                 message.channel.send(successEmbed)
         } else {
@@ -45,7 +45,7 @@ exports.run = async (client, message, args, tools) => {
                 if (err) throw err;
                 let successEmbed = new Discord.MessageEmbed()
                 .setTitle('Prefix')
-                .setColor("#d000a8")
+                .setColor("#0174c3")
                 .setDescription(`Success! The prefix for ${message.guild.name} is now \`${args[0]}\``)
                 message.channel.send(successEmbed)
             });

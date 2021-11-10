@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
         .setPage(1)
         .setThumbnail('https://www.slixa.com/static/blog-articles/as-seen-in/new-york-times-logo-white.png')
         .setTimestamp()
-        .setColor("#d000a8")
+        .setColor("#0174c3")
         .build();
 };
 

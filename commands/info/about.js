@@ -4,8 +4,8 @@ const superagent = require('superagent');
 exports.run = async (client, message, args, tools) => {
     let supportEmbed = new Discord.MessageEmbed()
     .setColor("#0174c3")
-    .setTitle('Axios Support Server')
-    .setDescription(`[Support](https://discord.gg/thaDJhqn3k)`)
+    .setTitle('About Axios')
+    .setDescription(`This is a Discord bot made by ThunderRedStar and loosely based off [HarutoHiroki's Cryptonix X](https://github.com/HarutoHiroki/CryptonixX).`)
     .setTimestamp()
     message.channel.send(supportEmbed)
 };
@@ -19,8 +19,7 @@ exports.conf = {
   };
   
   exports.help = {
-    name: 'support',
-    description: 'Returns an support server for the bot.',
-    usage: 'support',
-    example: 'support (returns a link to support server)'
+    name: 'about',
+    description: 'Gives some info about bot.',
+    usage: 'about',
   };

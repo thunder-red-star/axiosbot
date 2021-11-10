@@ -3,8 +3,8 @@ const superagent = require('superagent');
 
 exports.run = async (client, message, args, tools) => {
     let inviteEmbed = new Discord.MessageEmbed()
-    .setColor("#d000a8")
-    .setTitle('Vote')
+    .setColor("#0174c3")
+    .setTitle('Vote for Axios')
     .setDescription(`[Vote](https://top.gg/bot/809175820340822056/vote)`)
     .setTimestamp()
     message.channel.send(inviteEmbed)
@@ -22,5 +22,4 @@ exports.conf = {
     name: 'vote',
     description: 'Returns an vote link for the bot.',
     usage: 'vote',
-    example: 'vote (returns a link to vote for bot, then, on successful vote, gives you something)'
   };

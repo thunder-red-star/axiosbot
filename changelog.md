@@ -1,3 +1,27 @@
+## **Version 2.0.1**
+**Added**: `didiask` command
+**Changed**: N/A
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 2.0.0**
+**Added**: N/A
+**Changed**: Rebranded to Axios! Make sure to update your prefixes! I'm not doing this for you :)
+**Deprecated**: N/A
+**Fixed**: N/A
+**Removed**: N/A
+## **Version 1.10.1**
+**Added**: N/A
+**Changed**: `changelog` command, now uses a pagination embed
+**Deprecated**: N/A
+**Fixed**: `lyrics` command now can send messages over 2k chars because it breaks lyrics into 4-line verses
+**Removed**: N/A
+## **Version 1.10.0**
+**Added**: `mchistory`,`lyrics`,`usersearch` commands added
+**Changed**: N/A
+**Deprecated**: `example` command is going to be removed soon
+**Fixed**: N/A
+**Removed**: N/A
 ## **Version 1.9.0**
 **Added**: `feed`,`slap`,`kiss` commands added
 **Changed**: N/A

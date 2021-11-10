@@ -7,8 +7,8 @@ exports.run = async (client, message, args, tools) => {
     let content = args.join(" ");
     message.reply("Thanks for reporting a bug! Please don\'t spam this command.");
     let suggestEmbed = new Discord.MessageEmbed()
-    .setColor("#d000a8")
-    .setTitle('CommandStorm')
+    .setColor("#0174c3")
+    .setTitle('Axios')
     .setDescription(`${message.author.tag} (${message.author.id}) reported a bug:\n\`\`\`${content}\`\`\` \nin server ${message.guild.name}`)
     .setTimestamp()
     client.channels.cache.get('809487652654546965').send(suggestEmbed)

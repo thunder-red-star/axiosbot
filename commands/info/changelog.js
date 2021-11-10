@@ -10,31 +10,22 @@ const Discord = require('discord.js'),
 
 exports.run = async (client, message, args, tools) => {
     let text = ""
-    let v;
-    if (args[0]) {
-        let index = parseInt(args[0])
-        const data = fs.readFileSync('changelog.md', 'utf8')
-        let data1 = data.toString(),
-            data2 = data1.split("##").slice(index + 1, index + 2)
-        if (data2 == "") {return message.channel.send("Invalid index!")}
-        text += data2
-        v = args[0].toString()
-
-    }
-    else {
-        const data = fs.readFileSync('changelog.md', 'utf8')
-        let data1 = data.toString(),
-            data2 = data1.split("##").slice(1, 2)
-        text += data2
-
-    }
-    let version = v || "0"
-    let changelogEmbed = new Discord.MessageEmbed()
-        .setTitle('Latest Patch Notes for CommandStorm')
-        .setDescription(text + "\nThis version is " + version + " updates behind!")
-        .setColor("#d000a8")
+    let changelogtext = fs.readFileSync('changelog.md', 'utf8').split("##").slice(1).join("##").split("##")
+    
+    
+    let embeds = []
+    changelogtext.forEach((item) => {
+        embeds.push(new Discord.MessageEmbed().setDescription(item))
+    });
+    new Pagination.Embeds()
+        .setArray(embeds)
+        .setAuthorizedUsers([message.author.id])
+        .setChannel(message.channel)
+        .setPageIndicator(true)
+        .setPage(1)
         .setTimestamp()
-    message.channel.send(changelogEmbed)
+        .setColor("#0174c3")
+        .build();
 };
 
 exports.conf = {

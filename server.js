@@ -1,7 +1,7 @@
 const express = require('express'),
   server = express();
 server.all('/', (req, res)=>{
-    res.send('CommandStorm Discord Bot! ')
+    res.send('Axios Discord Bot! ')
 })
 
 function keepAlive(){

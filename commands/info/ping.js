@@ -6,7 +6,7 @@ exports.run = async (client, message, args, tools) => {
     .setTitle("Pong")
     .setDescription(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`)
     .setTimestamp()
-    .setColor("#d000a8")
+    .setColor("#0174c3")
     message.channel.send(pingEmbed)
 
 };

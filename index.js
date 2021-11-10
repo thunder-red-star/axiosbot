@@ -1,3 +1,8 @@
+const { ShardingManager } = require('kurasuta');
+const { join } = require('path');
+
+const { BaseCluster } = require('kurasuta');
+
 const Discord = require("discord.js"),
     client = new Discord.Client(),
     keepAlive = require('./server.js'),
@@ -12,7 +17,6 @@ var config = require('./config.json')
 const Coins = require('./models/coins.js')
 
 const webhook = new Topgg.Webhook("discord");
-
 modules = [
     "apis",
     "economy",
@@ -63,29 +67,29 @@ client.elevation = message => {
 };
 
 var webhookurl = config.webhookurl,
-  bodyParser = require('body-parser');
-app.use(bodyParser.json()); 
+    bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.get("/", function (req, res) {
-  res.send("dis is not a website kthx");
+app.get("/", function(req, res) {
+    res.send("dis is not a website kthx");
 });
 
-app.post("/hook", async function (req, res) {
-  if (req.headers.authorization !== config.auth) return res.send({code: "invalid auth"});
+app.post("/hook", async function(req, res) {
+    if (req.headers.authorization !== config.auth) return res.send({ code: "invalid auth" });
     var user_id = req.body.user;
     var bot = req.body.bot;
     const author = await client.users.fetch(user_id)
-        let newcoin = Math.floor(Math.random() * 200 + 900)
+    let newcoin = Math.floor(Math.random() * 200 + 900)
     author.send("Thanks for voting! You recieved " + newcoin + " coins!")
     const channel = client.channels.cache.get('811112730702118912')
     channel.send(author.tag + " voted!")
     await Coins.findOne({
         userID: user_id
     }, (err, coins) => {
-                let currentcoins = coins.coins
+        let currentcoins = coins.coins
 
         if (!coins) {
             let newcoins = new Coins({
@@ -97,17 +101,17 @@ app.post("/hook", async function (req, res) {
                 capacity: 1000
             })
             newcoins.save()
-        }else {
+        } else {
             coins.coins = currentcoins + newcoin;
             coins.save()
         }
-        });
-    res.send({code: "success"});
+    });
+    res.send({ code: "success" });
 });
 
-var listener = app.listen(3000, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+var listener = app.listen(30300, function() {
+    console.log('Your app is listening on port ' + listener.address().port);
 });
 
-//keepAlive();
+keepAlive();
 client.login(process.env.token);

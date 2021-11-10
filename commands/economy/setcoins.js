@@ -38,7 +38,7 @@ exports.run = async (client, message, args, tools) => {
             Coins.updateOne(myquery, newvalues, function(err, res) {
                 if (err) throw err;
                 const embed = new Discord.MessageEmbed()
-                    .setColor("#d000a8")
+                    .setColor("#0174c3")
                     .addField(`Set Coins`, `The user ${message.mentions.users.first().tag}'s coins were set to ${args[1]}`)
                     .setTimestamp()
                 message.channel.send({ embed })

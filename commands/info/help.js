@@ -14,6 +14,7 @@ const Discord = require("discord.js"),
   "utility"
 ];
 
+
 function permlevel(input) {
   if (input == 5)
     return "Can only be used by owner of bot";
@@ -28,15 +29,24 @@ function permlevel(input) {
   else return "Anyone can use this command!";
 }
 exports.run = async (client, message, args, tools) => {
+
+require('discord-buttons')(client);
+const { MessageButton, MessageActionRow } = require('discord-buttons');
+
+let button = new MessageButton()
+  .setStyle('url')
+  .setURL('https://top.gg/bot/809175820340822056/vote') 
+  .setLabel('Vote!'); 
+
   if (!args[0]) {
     let categoryEmbed = new Discord.MessageEmbed()
-      .setTitle("Categories of commands for CommandStorm")
-      .setColor("#d000a8")
+      .setTitle("Categories of commands for Axios")
+      .setColor("#0174c3")
 
       .setDescription(
-        "\`apis\`\n\`economy\`\n\`images\`\n\`info\`\n\`moderation\`\n\`music\`\n\`owner\`\n\`roleplay\`\n\`utility\`\n\nUse `c!help <category>` to see the commands for that category!"
+        "\`apis\`\n\`economy\`\n\`images\`\n\`info\`\n\`moderation\`\n\`music\`\n\`owner\`\n\`roleplay\`\n\`utility\`\n\nUse `a!help <category>` to see the commands for that category!"
       )
-      .setFooter("CommandStorm")
+      .setFooter("Axios")
       .setTimestamp();
     message.channel.send(categoryEmbed);
   } else {
@@ -60,10 +70,10 @@ exports.run = async (client, message, args, tools) => {
         let commandslist = filesArray.join("\n"),
           listEmbed = new Discord.MessageEmbed()
           .setTitle(`Commands in directory \"${args[0]}\"`)
-          .setColor("#d000a8")
+          .setColor("#0174c3")
 
-          .setDescription(commandslist + "\n\nUse `c!help <command>` to see help for an individual command!")
-          .setFooter("CommandStorm")
+          .setDescription(commandslist + "\n\nUse `a!help <command>` to see help for an individual command!")
+          .setFooter("Axios")
           .setTimestamp();
 
         message.channel.send(listEmbed);
@@ -74,15 +84,15 @@ exports.run = async (client, message, args, tools) => {
         cmd = client.commands.get(command);
         let helpEmbed = new Discord.MessageEmbed()
           .setTitle(`Help for command ${cmd.help.name}`)
-          .setColor("#d000a8")
+          .setColor("#0174c3")
           .setDescription(
             `Name: ${cmd.help.name}\nDescription: ${
               cmd.help.description
             }\nUsage: \`${cmd.help.usage}\`\nPermission Level: ${cmd.conf.permLevel} (${permlevel(
               cmd.conf.permLevel
-            )})\n\nPro tip: You can vote for the bot using \`c!vote\` and you can get coins for it!`
+            )})\n\nPro tip: You can vote for the bot using \`a!vote\` and you can get coins for it!`
           )
-          .setFooter("CommandStorm")
+          .setFooter("Axios")
           .setTimestamp();
         message.channel.send(helpEmbed);
       } else if (client.aliases.has(command)) {
@@ -90,16 +100,16 @@ exports.run = async (client, message, args, tools) => {
         cmd = client.commands.get(command);
         let helpEmbed = new Discord.MessageEmbed()
           .setTitle(`Help for command ${cmd.help.name}`)
-          .setColor("#d000a8")
+          .setColor("#0174c3")
 
           .setDescription(
             `Name: ${cmd.help.name}\nDescription: ${
               cmd.help.description
             }\nUsage: \`${cmd.help.usage}\`\nPermission Level: ${cmd.conf.permLevel} (${permlevel(
               cmd.conf.permLevel
-            )})\n\nPro tip: You can vote for the bot using \`c!vote\` and you can get coins for it!`
+            )})\n\nPro tip: You can vote for the bot using \`a!vote\` and you can get coins for it!`
           )
-          .setFooter("CommandStorm")
+          .setFooter("Axios")
           .setTimestamp();
         message.channel.send(helpEmbed);
       } else {
@@ -107,6 +117,7 @@ exports.run = async (client, message, args, tools) => {
       }
     }
   }
+  message.channel.send("Please vote!", {button: button})
 };
 
 exports.conf = {

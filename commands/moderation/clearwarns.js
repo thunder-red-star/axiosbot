@@ -40,7 +40,7 @@ exports.run = async (client, message, args) => {
         .addField('Action:', 'Clear Warns', true)
         .addField('User:', `${user.username}#${user.discriminator}`, true)
         .addField('Result:', reason, true)
-        .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+        .setFooter(`Axios`);
     message.channel.send({ embed });
 }
 

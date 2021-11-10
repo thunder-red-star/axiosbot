@@ -10,7 +10,7 @@ exports.run = async (client, message, args, tools) => {
         });
         let coinsEmbed = new Discord.MessageEmbed()
             .setTitle("Coins")
-            .setColor("#d000a8")
+            .setColor("#0174c3")
             .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
         message.channel.send(coinsEmbed)
     }
@@ -30,7 +30,7 @@ exports.run = async (client, message, args, tools) => {
         else {
             let coinsEmbed = new Discord.MessageEmbed()
                 .setTitle("Coins")
-                .setColor("#d000a8")
+                .setColor("#0174c3")
                 .setDescription(`You have ${data.coins} coins, and ${data.bank}/${data.capacity} coins in the bank.`)
             message.channel.send(coinsEmbed)
         }

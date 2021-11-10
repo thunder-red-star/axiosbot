@@ -3,8 +3,8 @@ const superagent = require('superagent');
 
 exports.run = async (client, message, args, tools) => {
     let inviteEmbed = new Discord.MessageEmbed()
-    .setColor("#d000a8")
-    .setTitle('CommandStorm')
+    .setColor("#0174c3")
+    .setTitle('Axios Dashhoard')
     .setDescription(`[Dashboard](https://dashboard.williamvongphan.repl.co)\n\nhaha this is a wip`)
     .setTimestamp()
     message.channel.send(inviteEmbed)

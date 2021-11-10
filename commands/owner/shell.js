@@ -15,7 +15,7 @@ function clean(text) {
 exports.run = async (client, message, args) => {
     let filter = m => m.author.id == settings.ownerid;
     let shellcommand = new Discord.MessageCollector(message.channel, filter, { max: 1000, time: 1000000 });
-    let string = "Discord.js Shell Started!\n"
+    let string = "exec shell"
     let shell = await message.channel.send(`\`\`\`bash\n${string}\`\`\``)
     shellcommand.on('collect', m => {
         dir = exec(m.content, function(err, stdout, stderr) {

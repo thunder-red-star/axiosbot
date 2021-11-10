@@ -34,8 +34,8 @@ exports.run = async (client, message, tools) => {
       let globalprefix = settings.prefix;
       osutils.cpuUsage(async function(v) {
         const embed = await new Discord.MessageEmbed()
-        .setColor("#d000a8")
-        .setTitle('Stats for CommandStorm')
+        .setColor("#0174c3")
+        .setTitle('Stats for Axios')
         .setThumbnail(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
         .setURL(client.user.avatarURL({ format: 'png', dynamic: true, size: 2048 }))
         .setTimestamp()
@@ -55,7 +55,7 @@ exports.run = async (client, message, tools) => {
         .addField("RAM Usage Of VPS %", `${(100 - osutils.freememPercentage() * 100).toString().split(".")[0] + "." + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[0] + (100 - osutils.freememPercentage() * 100).toString().split(".")[1].split('')[1]}%`,true)
         .addField("Ping", Math.round(client.ws.ping) + "ms", true)
         .addField("Uptime", days + "d " + hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s", true)
-        .setFooter(`CommandStorm`);
+        .setFooter(`Axios`);
         message.channel.send({embed});
       })
     })

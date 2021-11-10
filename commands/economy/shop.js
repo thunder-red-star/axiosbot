@@ -4,6 +4,7 @@ const Discord = require('discord.js'),
   Coins = require('../../models/coins.js'),
   copypastas = require('../../assets/shopitems.json'),
   Pagination = require('discord-paginationembed');
+  
 
 
 exports.run = async (client, message, args, tools) => {
@@ -22,7 +23,7 @@ exports.run = async (client, message, args, tools) => {
         .setTitle('Shop')
         .setDescription('Buy an item with \`buy <id>!\`')
         .setTimestamp()
-        .setColor("#d000a8")
+        .setColor("#0174c3")
         .build();
 
 };

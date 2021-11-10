@@ -33,11 +33,11 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: [],
-    permLevel: 5
+    permLevel: 0
   };
 
   exports.help = {
     name: 'pretend',
-    description: 'pretend to be someone else (disabled for anyone else but owner)',
+    description: 'pretend to be someone else',
     usage: 'pretend <mention> <thing>'
   };

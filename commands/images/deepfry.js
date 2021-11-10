@@ -14,7 +14,6 @@ exports.run = async (client, message, args) => {
             avatar = message.author.avatarURL({ format: 'png', dynamic: true, size: 2048 })
         }
     }
-
     link = await AlexClient.image.deepfry({ image: avatar })
     message.channel.send({ files: [{ attachment: link }] });
 };
