@@ -21,18 +21,18 @@ exports.run = async (client, message, args) => {
         dir = exec(m.content, function(err, stdout, stderr) {
             m.delete()
             if (err) {
-                string += "> " + m.content + "\n"
+                string += "thunder@axios$ " + m.content + "\n"
                 string += err + "\n"
                 shell.edit(`\`\`\`bash\n${string}\`\`\``)
             }
             if (m.content == "exit") {
-                string += "> " + m.content + "\n"
+                string += "thunder@axios$ " + m.content + "\n"
                 shellcommand.stop()
                 message.channel.send("Shell terminated")
                 return;
             }
             else {
-                string += "> " + m.content + "\n"
+                string += "thunder@axios$ " + m.content + "\n"
                 string += stdout + "\n"
                 shell.edit(`\`\`\`bash\n${string}\`\`\``)
             }

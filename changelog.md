@@ -1,3 +1,9 @@
+## **Version 69.4.20**
+**Added**: N/A  
+**Changed**: N/A  
+**Deprecated**: The whole bot (will not be updated except in exceptional circumstances)  
+**Fixed**: N/A  
+**Removed**: N/A  
 ## **Version 2.0.1**
 **Added**: `didiask` command
 **Changed**: N/A

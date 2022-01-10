@@ -4,18 +4,9 @@ const Discord = require('discord.js'),
     AlexClient = new AlexAPI(process.env.apitoken);
 
 exports.run = async (client, message, args) => {
-    let avatar = ""
-    let user = message.mentions.users.first();
-    if (user === undefined) {
-        let userid = message.content.split(" ").slice(1, 2).join("")
-        user = await client.users.cache.get(userid)
-        avatar = user.avatarURL({ format: 'png', dynamic: true, size: 2048 })
-        if (user === undefined) {
-            avatar = message.author.avatarURL({ format: 'png', dynamic: true, size: 2048 })
-        }
-    }
+    let avatar = message.content.split(" ").slice(1, 2)
     link = await AlexClient.image.deepfry({ image: avatar })
-    message.channel.send({ files: [{ attachment: link }] });
+    message.channel.send({ files: [{ attachment: link }]});
 };
 
 exports.conf = {

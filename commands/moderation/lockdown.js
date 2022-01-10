@@ -1,11 +1,12 @@
 exports.run = (client, message, args) => {
   if (!client.lockit) client.lockit = [];
   //if (!message.member.hasPermission("MANAGE_CHANNELS")) return msg.reply("❌**Error:** You don't have the permission to do that!");
-
+  client.lockit.push(message.channel.id)
   message.channel.createOverwrite(message.guild.id, {
       SEND_MESSAGES: false
-    })
-      message.channel.send(`Channel is locked.`);
+    }).then(() => {
+		message.channel.send(`Channel is locked.`);
+	})
   };
   
 exports.conf = {
